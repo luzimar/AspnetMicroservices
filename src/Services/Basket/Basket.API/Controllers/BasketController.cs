@@ -1,7 +1,6 @@
 ﻿using Basket.API.Entities;
 using Basket.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using System;
 using System.Net;
 using System.Threading.Tasks;
@@ -13,11 +12,9 @@ namespace Basket.API.Controllers
     public class BasketController : ControllerBase
     {
         private readonly IBasketRepository _repository;
-        private readonly ILogger<BasketController> _logger;
-        public BasketController(IBasketRepository repository, ILogger<BasketController> logger)
+        public BasketController(IBasketRepository repository)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [HttpGet("{userName}", Name = "GetBasket")]
