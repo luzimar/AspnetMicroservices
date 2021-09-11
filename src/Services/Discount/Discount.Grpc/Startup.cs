@@ -36,6 +36,9 @@ namespace Discount.Grpc
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGrpcService<DiscountService>();
+                endpoints.MapGrpcService<DocumentoService>();
+                endpoints.MapGrpcService<PessoaService>();
+                endpoints.MapGrpcService<CarroService>();
 
                 endpoints.MapGet("/", async context =>
                 {

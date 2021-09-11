@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "Discount.Grpc.Protos";
+
+service CarroProtoService {
+	rpc ObterCarro (ObterCarroRequest) returns (ObterCarroResponse);
+}
+
+message ObterCarroRequest {
+	string modelo = 1;
+}
+
+message ObterCarroResponse {
+	string modelo = 1;
+	string marca = 2;
+	int32 anoFabricacao = 3;
+}

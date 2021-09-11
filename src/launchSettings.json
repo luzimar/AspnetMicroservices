@@ -1,0 +1,21 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "composeLaunchServiceName": "basket.api",
+      "serviceActions": {
+        "basket.api": "StartDebugging",
+        "basketdb": "StartWithoutDebugging",
+        "catalog.api": "StartDebugging",
+        "catalogdb": "StartWithoutDebugging",
+        "discount.api": "StartDebugging",
+        "discountdb": "StartWithoutDebugging",
+        "pgadmin": "StartWithoutDebugging",
+        "portainer": "StartWithoutDebugging"
+      },
+      "composeLaunchAction": "LaunchBrowser",
+      "commandVersion": "1.0",
+      "composeLaunchUrl": "{Scheme}://localhost:{ServicePort}/swagger"
+    }
+  }
+}

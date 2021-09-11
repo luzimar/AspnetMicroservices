@@ -1,22 +1,32 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <DockerComposeProjectPath>..\..\..\docker-compose.dcproj</DockerComposeProjectPath>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Protos\carro.proto" />
     <None Remove="Protos\discount.proto" />
+    <None Remove="Protos\documento.proto" />
+    <None Remove="Protos\pessoa.proto" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Grpc.AspNetCore" Version="2.39.0" />
     <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.11.1" />
     <PackageReference Include="Npgsql" Version="5.0.7" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <Protobuf Include="Protos\carro.proto" GrpcServices="Server" />
     <Protobuf Include="Protos\discount.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\documento.proto" GrpcServices="Server" />
+    <Protobuf Include="Protos\pessoa.proto" GrpcServices="Server" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+option csharp_namespace = "Discount.Grpc.Protos";
+
+service DocumentoProtoService {
+	rpc ObterDocumento (ObterDocumentoRequest) returns (DocumentoModel);
+	rpc SalvarDocumento (SalvarDocumentoRequest) returns (DocumentoModel);
+	rpc AtualizarDocumento (AtualizarDocumentoRequest) returns (AtualizarDocumentoResponse);
+}
+
+message ObterDocumentoRequest {
+	string nome = 1;
+}
+
+message DocumentoModel {
+	int32 id = 1;
+	string nome = 2;
+	string dataEmissao = 3;
+	string orgaoEmissor = 4;
+}
+
+message SalvarDocumentoRequest {
+    DocumentoModel documento = 1;
+}
+
+message AtualizarDocumentoRequest {
+	DocumentoModel documento = 1;
+}
+
+message AtualizarDocumentoResponse {
+	bool sucesso = 1;
+}
+
