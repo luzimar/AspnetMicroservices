@@ -8,10 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Protos\carro.proto" />
     <None Remove="Protos\discount.proto" />
-    <None Remove="Protos\documento.proto" />
-    <None Remove="Protos\pessoa.proto" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,10 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\carro.proto" GrpcServices="Server" />
     <Protobuf Include="Protos\discount.proto" GrpcServices="Server" />
-    <Protobuf Include="Protos\documento.proto" GrpcServices="Server" />
-    <Protobuf Include="Protos\pessoa.proto" GrpcServices="Server" />
   </ItemGroup>
 
 </Project>

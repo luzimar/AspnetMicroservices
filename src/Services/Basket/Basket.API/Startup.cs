@@ -33,19 +33,7 @@ namespace Basket.API
             services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
                 (o => o.Address = new Uri(Configuration["GrpcSettings:DiscountUrl"]));
 
-            services.AddGrpcClient<DocumentoProtoService.DocumentoProtoServiceClient>
-               (o => o.Address = new Uri(Configuration["GrpcSettings:DiscountUrl"]));
-
-            services.AddGrpcClient<PessoaProtoService.PessoaProtoServiceClient>
-               (o => o.Address = new Uri(Configuration["GrpcSettings:DiscountUrl"]));
-
-            services.AddGrpcClient<CarroProtoService.CarroProtoServiceClient>
-               (o => o.Address = new Uri(Configuration["GrpcSettings:DiscountUrl"]));
-
             services.AddScoped<IDiscountGrpcService, DiscountGrpcService>();
-            services.AddScoped<IDocumentoGrpcService, DocumentoGrpcService>();
-            services.AddScoped<IPessoaGrpcService, PessoaGrpcService>();
-            services.AddScoped<ICarroGrpcService, CarroGrpcService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
